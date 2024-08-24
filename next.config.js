@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["raw.githubusercontent.com", "rickandmortyapi.com"],
+    remotePatterns: [ {
+      protocol: 'https',
+      hostname: 'rickandmortyapi.com',
+      pathname: '**',
+    },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        pathname: '**',
+      },],
   },
 };
 
